@@ -42,27 +42,39 @@ export default function Home() {
       id: "purple-ball",
       image: purpleBall,
     },
-    {
-      id: "red-ball",
-      image: redBall,
-    },
+
     {
       id: "small-red-ball",
       image: smallRedBall,
+    },
+    {
+      id: "red-ball",
+      image: redBall,
     },
   ];
 
   return (
     <DefaultLayout>
-      {particles.map((item) => (
-        <div key={item.id} id={item.id} className="particle">
+      {particles.map((item, index) => (
+        <div
+          key={item.id}
+          id={item.id}
+          className="particle"
+          data-aos="fade-up"
+          data-aos-delay={index * 250}
+        >
           <img src={item.image} alt="" />
         </div>
       ))}
 
       <div className="home__wrapper">
         <div className="container">
-          <div className="home">
+          <div
+            className="home"
+            data-aos="fade-up"
+            data-aos-delay="1600"
+            data-aos-duration="1000"
+          >
             <div className="home__welcome-text">
               <h1 className="home__welcome-text__title">
                 <p>Зарабатывайте больше</p>

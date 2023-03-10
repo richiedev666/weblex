@@ -2,9 +2,13 @@
   font-family: "Montserrat", sans-serif;
 }
 
+@mixin gradient {
+  background: -webkit-linear-gradient(314deg, #fcb045 20%, #ff3f78 95%), #e4e5ea;
+}
+
 @mixin gradient-text {
   display: inline;
-  background: -webkit-linear-gradient(314deg, #fcb045 20%, #ff3f78 95%), #e4e5ea;
+  @include gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

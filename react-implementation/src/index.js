@@ -4,8 +4,13 @@ import reportWebVitals from "./reportWebVitals";
 
 import "./styles/index.scss";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import router from "./router";
 import { RouterProvider } from "react-router-dom";
+
+AOS.init();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

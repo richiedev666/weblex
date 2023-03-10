@@ -75,7 +75,12 @@ export default function FooterComponent() {
   ]);
 
   return (
-    <div className="footer__wrapper">
+    <div
+      className="footer__wrapper"
+      data-aos="fade-up"
+      data-aos-delay="2000"
+      data-aos-duration="1000"
+    >
       <div className="container">
         <div className="footer">
           {footerSections.map((section) => (
@@ -83,8 +88,11 @@ export default function FooterComponent() {
               <h3 className="footer__section__title">{section.title}</h3>
               <nav className="footer__section__items__wrapper">
                 <ul className="footer__section__items">
-                  {section.items.map((items) => (
-                    <div className="footer__section__items__block">
+                  {section.items.map((items, index) => (
+                    <div
+                      key={`section-${index}`}
+                      className="footer__section__items__block"
+                    >
                       {items.map((item) => (
                         <li
                           key={item.title}
@@ -103,7 +111,9 @@ export default function FooterComponent() {
           <div className="footer__section">
             <h3 className="footer__section__title">Контакты</h3>
 
-            <p className="footer__section__phone">{phoneNumber}</p>
+            <p className="footer__section__phone">
+              <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
+            </p>
 
             <div className="footer__socials">
               {socials.map((item, index) => (

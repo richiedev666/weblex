@@ -55,6 +55,10 @@
   }
 }
 
+#noise {
+  display: none;
+}
+
 .home {
   &__wrapper {
     overflow: hidden;
@@ -76,6 +80,7 @@
     &__title {
       font-size: clamp(2.25rem, 1.3125rem + 3vw, 3rem);
       width: 360px;
+      line-height: 58px;
 
       span {
         display: block;
@@ -90,6 +95,7 @@
       font-size: 18px;
       width: 275px;
       font-weight: 400;
+      line-height: 22px;
     }
   }
 
@@ -101,6 +107,7 @@
 
     &__description {
       width: 290px;
+      line-height: 22px;
       span {
         text-transform: uppercase;
         font-weight: 700;
@@ -128,6 +135,7 @@
           @include Montserrat;
           font-size: clamp(0.75rem, 0.5938rem + 0.5vw, 0.875rem);
           font-weight: 400;
+          line-height: 19px;
         }
       }
     }
@@ -137,6 +145,92 @@
       padding: 20px 0;
       cursor: pointer;
       @include hover;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  #purple-ball {
+    top: 27%;
+    right: -10px;
+    left: unset;
+
+    img {
+      transform: rotate(90deg);
+    }
+  }
+
+  #red-ball {
+    bottom: 50%;
+    top: unset;
+    left: -10px;
+
+    img {
+      transform: scale(0.5);
+    }
+  }
+
+  .home {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+
+    &__wrapper {
+      height: 450px;
+      backdrop-filter: blur(5px);
+    }
+
+    &__welcome-text {
+      &__title {
+        width: 100%;
+        line-height: 44px;
+      }
+    }
+
+    &__services {
+      text-align: left;
+
+      &__description {
+        line-height: 22px;
+        font-size: 18px;
+
+        span {
+          text-transform: unset;
+        }
+      }
+
+      &__grid {
+        gap: 14px;
+
+        &__item {
+          &__title {
+            font-weight: 400;
+            @include Montserrat;
+            position: relative;
+            padding-left: 18px;
+
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 10px;
+              height: 1px;
+              @include gradient;
+              top: 50%;
+              transform: translateY(-50%);
+              left: 0;
+            }
+          }
+
+          &__description {
+            display: none;
+          }
+        }
+      }
+
+      &__button {
+        display: none;
+      }
     }
   }
 }

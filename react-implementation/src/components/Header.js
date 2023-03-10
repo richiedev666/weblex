@@ -32,17 +32,23 @@ export default function HeaderComponent() {
   ]);
 
   return (
-    <div className="header__wrapper">
+    <div
+      className="header__wrapper"
+      data-aos="fade-up"
+      data-aos-delay="1400"
+      data-aos-duration="750"
+    >
       <div className="container">
         <div className="header">
-          <div className="header__logo">
-            <img src={logo} alt="" />
+          <Link to="/">
+            <div className="header__logo">
+              <img src={logo} alt="" />
 
-            <p className="header__logo__text">
-              крупный интегратор CRM в Росcии и ещё 8 странах
-            </p>
-          </div>
-
+              <p className="header__logo__text">
+                крупный интегратор CRM в Росcии и ещё 8 странах
+              </p>
+            </div>
+          </Link>
           <nav className="header__nav__wrapper">
             <ul className="header__nav">
               {headerNavItems.map((item, index) => (
@@ -52,11 +58,11 @@ export default function HeaderComponent() {
               ))}
             </ul>
           </nav>
-
           <div className="header__phone">
-            <p>{phoneNumber}</p>
+            <p>
+              <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
+            </p>
           </div>
-
           <div className="header__socials">
             {socials.map((item, index) => (
               <a

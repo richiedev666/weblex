@@ -5,6 +5,10 @@
   grid-template-columns: 1fr 2fr 1fr;
 
   &__section {
+    &__phone {
+      @include hover;
+    }
+
     &__title {
       color: var(--secondary-title-color);
       text-transform: uppercase;
@@ -59,6 +63,43 @@
     a {
       text-decoration: underline;
       @include hover;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .footer {
+    &__wrapper {
+      background-color: var(--primary-background-color);
+      z-index: 1;
+      padding: 30px 0;
+    }
+
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    &__section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &:last-child {
+        text-align: left;
+        justify-self: flex-start;
+        justify-content: flex-start;
+      }
+
+      &__items {
+        gap: 25px;
+      }
+    }
+
+    &__socials {
+      justify-content: flex-start !important;
+    }
+
+    &__bottom {
+      text-align: left;
     }
   }
 }
