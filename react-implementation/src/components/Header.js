@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../images/logo_welbex.svg";
-import { telegram, whatsapp, viber } from "../icons";
+
+import { socials, phoneNumber } from "../data";
 
 import "../styles/components/_header.scss";
 
@@ -30,21 +31,6 @@ export default function HeaderComponent() {
     },
   ]);
 
-  const [headerSocials] = useState([
-    {
-      icon: telegram,
-      link: "https://t.me/richiedev",
-    },
-    {
-      icon: viber,
-      link: "/viber",
-    },
-    {
-      icon: whatsapp,
-      link: "/whatsapp",
-    },
-  ]);
-
   return (
     <div className="header__wrapper">
       <div className="container">
@@ -68,12 +54,13 @@ export default function HeaderComponent() {
           </nav>
 
           <div className="header__phone">
-            <p>+7 555 555-55-55</p>
+            <p>{phoneNumber}</p>
           </div>
 
           <div className="header__socials">
-            {headerSocials.map((item, index) => (
+            {socials.map((item, index) => (
               <a
+                key={index}
                 className="header__socials__item"
                 target="_blank"
                 href={item.link}

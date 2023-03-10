@@ -1,0 +1,59 @@
+@import "../config/mixins";
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+
+  &__section {
+    &__title {
+      color: var(--secondary-title-color);
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    &__items {
+      display: flex;
+      gap: 50px;
+
+      &__block {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    &:last-child {
+      justify-self: flex-end;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .footer {
+        &__socials {
+          display: flex;
+          justify-content: flex-end;
+          gap: 14px;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 40px 0 20px 0;
+    @include Montserrat;
+
+    a {
+      text-decoration: underline;
+      @include hover;
+    }
+  }
+}
