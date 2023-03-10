@@ -1,0 +1,18 @@
+@mixin Montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+@mixin gradient-text {
+  display: inline;
+  background: -webkit-linear-gradient(314deg, #fcb045 20%, #ff3f78 95%), #e4e5ea;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin hover {
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+  &:hover {
+    opacity: 0.7;
+  }
+}

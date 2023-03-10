@@ -1,0 +1,43 @@
+@import "../config/mixins";
+
+.header {
+  &__wrapper {
+    padding: 60px 0;
+  }
+
+  display: grid;
+  grid-template-columns: 3fr 10fr 6fr 1fr;
+  align-items: baseline;
+  justify-items: center;
+  gap: 10px;
+
+  &__nav,
+  &__socials {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    &__item {
+      @include hover;
+    }
+  }
+
+  &__logo {
+    width: 165px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    img {
+      width: 140px;
+    }
+
+    &__text {
+      font-size: 10px;
+      line-height: 12px;
+      font-weight: 300;
+      @include Montserrat;
+    }
+  }
+}

@@ -6,7 +6,15 @@
 
 body {
   font-family: Inter, sans-serif;
-  font-size: clamp(1rem, 1.3125rem + -1vw, 0.75rem);
+  font-size: clamp(0.875rem, 0.7188rem + 0.5vw, 1rem);
+  font-weight: 500;
+  color: var(--primary-text-color);
+
+  button {
+    font-family: Inter, sans-serif;
+    color: var(--primary-text-color);
+    font-size: clamp(0.875rem, 0.7188rem + 0.5vw, 1rem);
+  }
 }
 
 .container {
@@ -14,4 +22,24 @@ body {
   padding: 0 10px;
   width: 100%;
   margin: 0 auto;
+}
+
+.main-wrapper {
+  background-color: var(--primary-background-color);
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer";
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+  }
 }
