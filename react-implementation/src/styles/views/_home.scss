@@ -1,5 +1,11 @@
 @import "../config/mixins";
 
+.particle {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
 #red-light {
   position: absolute;
   top: 0;
@@ -54,13 +60,13 @@
     overflow: hidden;
     display: flex;
     align-items: center;
-    max-height: 100vh;
+    height: 100%;
     position: relative;
   }
 
+  height: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   &__welcome-text {
     display: flex;
@@ -115,11 +121,12 @@
 
         &__title {
           font-size: clamp(0.875rem, 0.7188rem + 0.5vw, 1rem);
+          text-transform: uppercase;
         }
 
         &__description {
           @include Montserrat;
-          font-size: 14px;
+          font-size: clamp(0.75rem, 0.5938rem + 0.5vw, 0.875rem);
           font-weight: 400;
         }
       }

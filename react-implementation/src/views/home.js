@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <DefaultLayout>
       {particles.map((item) => (
-        <div key={item.id} id={item.id}>
+        <div key={item.id} id={item.id} className="particle">
           <img src={item.image} alt="" />
         </div>
       ))}
