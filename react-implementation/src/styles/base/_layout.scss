@@ -30,6 +30,8 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "header" "main" "footer";
+  overflow: hidden;
+  position: relative;
 
   header {
     grid-area: header;

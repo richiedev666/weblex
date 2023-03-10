@@ -3,6 +3,12 @@ import { useState } from "react";
 
 import "../styles/views/_home.scss";
 
+import redLight from "../images/particles/red_light.png";
+import purpleLight from "../images/particles/purple_light.png";
+import purpleBall from "../images/particles/purple_ball.png";
+import redBall from "../images/particles/red_ball.png";
+import smallRedBall from "../images/particles/red_ball_small.png";
+
 export default function Home() {
   const [services] = useState([
     {
@@ -23,8 +29,37 @@ export default function Home() {
     },
   ]);
 
+  const particles = [
+    {
+      id: "red-light",
+      image: redLight,
+    },
+    {
+      id: "purple-light",
+      image: purpleLight,
+    },
+    {
+      id: "purple-ball",
+      image: purpleBall,
+    },
+    {
+      id: "red-ball",
+      image: redBall,
+    },
+    {
+      id: "small-red-ball",
+      image: smallRedBall,
+    },
+  ];
+
   return (
     <DefaultLayout>
+      {particles.map((item) => (
+        <div key={item.id} id={item.id}>
+          <img src={item.image} alt="" />
+        </div>
+      ))}
+
       <div className="home__wrapper">
         <div className="container">
           <div className="home">
