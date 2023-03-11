@@ -1,6 +1,6 @@
 import { telegram, whatsapp, viber } from "../icons";
 
-export default [
+const socials = [
   {
     icon: telegram,
     link: "https://t.me/richiedev",
@@ -14,3 +14,5 @@ export default [
     link: "/whatsapp",
   },
 ];
+
+export default socials;
